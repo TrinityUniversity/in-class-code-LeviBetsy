@@ -1,0 +1,23 @@
+@()
+
+@main("Login"){
+<h1>Login page</h1>
+<h2>GET Login Unsecure</h2>
+<form method="get" action="validateLoginGet">
+    Username: <input type="text" name="username"></input>
+    Password: <input type="password" name="password"></input>
+    <input type="submit">
+</form>
+<h2>Login</h2>
+<form method="post" action="@routes.TaskList.validateLoginPost">
+    Username: <input type="text" name="username"></input>
+    Password: <input type="password" name="password"></input>
+    <input type="submit">
+</form>
+<h2>Create account</h2>
+<form method="post" action="@routes.TaskList.createUser">
+    Username: <input type="text" name="username"></input>
+    Password: <input type="password" name="password"></input>
+    <input type="submit">
+</form>
+}

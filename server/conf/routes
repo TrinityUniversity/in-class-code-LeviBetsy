@@ -4,7 +4,24 @@
 
 # Home page
 GET        /                             controllers.Application.index
-GET        /task                         controllers.TaskList1.taskList
+GET        /task                         controllers.TaskList.taskList
+
+GET         /login                      controllers.TaskList.login
+GET         /logout                      controllers.TaskList.logout
+
++ nocsrf
+GET         /validateLoginGet                controllers.TaskList.validateLoginGet(username, password)
++ nocsrf
+POST        /validateLoginPost              controllers.TaskList.validateLoginPost
++ nocsrf
+POST        /createUser                     controllers.TaskList.createUser
+
+
+# ==> /productArgs?prodType=abc&prodNum=123
+GET         /productArgs                 controllers.Application.product(prodType, prodNum: Int)
+# ==> /productArgs/abc/123
+GET         /product/:prodType/:prodNum  controllers.Application.product(prodType, prodNum: Int)
+# ==> can use regex or route in a list of things
 
 # Prefix must match `play.assets.urlPrefix`
 GET        /assets/*file                 controllers.Assets.at(file)
