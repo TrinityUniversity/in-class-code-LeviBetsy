@@ -3,14 +3,14 @@ package models
 import collection.mutable
 
 object TaskListModel {
-    private val tasks = mutable.Map[String, List[String]]("Levi" -> List("game", "code"))
+  private val tasks =
+    mutable.Map[String, List[String]]("Levi" -> List("game", "code"))
 
-    private val users = mutable.Map[String, String]()
-    users.put("Levi", "password")
-
+  private val users = mutable.Map[String, String]()
+  users.put("Levi", "password")
 
   def validateUser(username: String, password: String): Boolean = {
-    users.get(username).map( p => p == password).getOrElse(false)
+    users.get(username).map(p => p == password).getOrElse(false)
   }
 
   def createUser(username: String, password: String): Boolean = {
